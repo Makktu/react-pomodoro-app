@@ -1,0 +1,17 @@
+button {
+    border: none;
+    margin-left: 30px;
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 7px;
+    color: yellow;
+    width: 150px;
+}
+
+.start {
+    background-color: green;
+}
+
+.stop {
+    background-color: brown;
+}
