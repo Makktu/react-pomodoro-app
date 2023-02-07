@@ -6,23 +6,29 @@ import Apple from "./assets/Apple.svg";
 import "./App.css";
 
 function App(props) {
-    const startClicked = () => {
-        console.log("CLICKED START");
+    let theTimer = ["25", "00", false];
+    let timerOn;
+
+    const buttonClicked = (trueOrFalse) => {
+        if (trueOrFalse) timerOn = true;
+        if (!trueOrFalse) timerOn = false;
     };
 
-    let theTimer = ["25", "00", false];
     return (
         <>
             <div className="App">
                 <h1>McPomodoro</h1>
-                <img className="big_apple" src={Apple}></img>
-
-                <Timer time={theTimer} />
+                <div>
+                    <img className="big_apple" src={Apple}></img>
+                </div>
+                <div>
+                    <Timer time={theTimer} timerOn={timerOn} />
+                </div>
                 <div className="all_buttons">
-                    <Button type="start" onClickStart={startClicked} />
+                    <Button type="start" buttonClicked={buttonClicked} />
                     <br />
                     <br />
-                    <Button type="stop" />
+                    <Button type="stop" buttonClicked={buttonClicked} />
                 </div>
             </div>
         </>
